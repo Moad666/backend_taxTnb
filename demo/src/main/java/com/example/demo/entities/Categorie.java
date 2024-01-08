@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -17,7 +19,5 @@ public class Categorie {
 
 	public String getType(){return type;}
 	public void setType(String type){this.type=type;}
-	
-	
 	
 }

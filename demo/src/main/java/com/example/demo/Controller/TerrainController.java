@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Service.CategorieService;
+import com.example.demo.Service.ProprietaireService;
 import com.example.demo.Service.TerrainService;
+import com.example.demo.entities.Categorie;
+import com.example.demo.entities.Proprietaire;
 import com.example.demo.entities.Terrain;
 
 @CrossOrigin(origins = "http://localhost:4200/")
@@ -23,11 +27,17 @@ public class TerrainController {
 	
 	@Autowired
 	TerrainService terrainService;
+	
+	@Autowired
+	CategorieService categorieService;
+	
+	@Autowired
+	ProprietaireService proprietaireService;
 
 	
 	@PostMapping("/save")
 	public <S extends Terrain> S save(@RequestBody S entity) {
-		return terrainService.save(entity);
+	    return terrainService.save(entity);
 	}
 
 	@GetMapping("/findAll")
