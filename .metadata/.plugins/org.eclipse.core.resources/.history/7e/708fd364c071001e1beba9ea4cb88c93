@@ -1,0 +1,24 @@
+package com.example.demo.entities;
+
+public class Proprietaire {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	private String nom;
+	private String prenom;
+	private String CIN;
+
+	public int getId(){return id;}
+	public void setId(int id){this.id=id;}
+
+
+	public String getNom(){return nom;}
+	public void setNom(String nom){this.nom=nom;}
+
+	public String getPrenom(){return prenom;}
+	public void setPrenom(String prenom){this.prenom=prenom;}
+
+
+	public String getCIN(){return CIN;}
+	public void setCIN(String CIN){this.CIN=CIN;}
+}

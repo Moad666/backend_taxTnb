@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.Categorie"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.Taux"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.Terrain"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.TaxeTnb"/>
+    <fullyQualifiedTypeName name="com.example.demo.Dao.ProprietaireRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.Proprietaire"/>
+    <fullyQualifiedTypeName name="com.example.demo.Dao.CategorieRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Dao.TerrainRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.Dao.TauxRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.example.demo.Dao.TaxeTnbRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.ProprietaireService"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.TerrainService"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.CategorieService"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.TauxService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.TaxeTnbService"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+</qualifiedTypeNameHistroy>

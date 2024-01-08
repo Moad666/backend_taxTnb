@@ -1,0 +1,17 @@
+package com.example.demo.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Dao.ProprietaireRepository;
+import com.example.demo.entities.Proprietaire;
+
+@Service
+public class ProprietaireService {
+	@Autowired
+	ProprietaireRepository proprietaireRepository;
+	
+	public Proprietaire save(Proprietaire proprietaire) {
+		
+	}
+}

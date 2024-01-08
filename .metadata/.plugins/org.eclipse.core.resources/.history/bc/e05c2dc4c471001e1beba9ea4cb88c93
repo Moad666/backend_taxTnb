@@ -1,0 +1,50 @@
+package com.example.demo.Controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Service.ProprietaireService;
+import com.example.demo.entities.Proprietaire;
+
+@RestController
+@RequestMapping("/proprietaire")
+public class ProprietaireController {
+	
+	@Autowired
+	ProprietaireService proprietaireService;
+	
+	@PostMapping("/save")
+	public <S extends Proprietaire> S save(@RequestBody S entity) {
+		return proprietaireService.save(entity);
+	}
+
+	@GetMapping("/findAll")
+	public List<Proprietaire> findAll(Sort sort) {
+		return proprietaireService.findAll(sort);
+	}
+	
+	@GetMapping("/findById/{id}")
+	public Optional<Proprietaire> findById(@PathVariable Integer id) {
+		return proprietaireService.findById(id);
+	}
+
+	public void deleteById(Integer id) {
+		proprietaireService.deleteById(id);
+	}
+
+	public Proprietaire findByCin(String Cin) {
+		return proprietaireService.findByCin(Cin);
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,6 @@
+package com.example.demo.Service;
+
+@Service
+public class ProprietaireService {
+	
+}

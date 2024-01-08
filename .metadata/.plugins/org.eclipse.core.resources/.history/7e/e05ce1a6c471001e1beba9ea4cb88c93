@@ -1,0 +1,35 @@
+package com.example.demo.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Dao.ProprietaireRepository;
+import com.example.demo.entities.Proprietaire;
+
+@Service
+public class ProprietaireService {
+	@Autowired
+	ProprietaireRepository proprietaireRepository;
+
+	public <S extends Proprietaire> S save(S entity) {
+		return proprietaireRepository.save(entity);
+	}
+
+	public List<Proprietaire> findAll(Sort sort) {
+		return proprietaireRepository.findAll(sort);
+	}
+
+	public Optional<Proprietaire> findById(Integer id) {
+		return proprietaireRepository.findById(id);
+	}
+
+	public void deleteById(Integer id) {
+		proprietaireRepository.deleteById(id);
+	}
+	
+	
+}

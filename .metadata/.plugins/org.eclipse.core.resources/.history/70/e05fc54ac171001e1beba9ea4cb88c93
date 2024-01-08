@@ -1,0 +1,17 @@
+package com.example.demo.entities;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Taux {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	private 
+	@ManyToOne
+	private Categorie categorie;
+	
+	
+	
+}

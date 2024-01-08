@@ -1,0 +1,25 @@
+package com.example.demo.entities;
+
+public class Terrain {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	privat int id;
+
+	private int mc;
+
+	@ManyToOne
+	private Proprietaire proprietaire;
+
+	@ManyToOne
+	private Categorie categorie;
+
+	public int getId(){return id;}
+	public void setId(int id){this.id=id;}
+
+	public int getMc(){return mc;}
+	public void setMc(int mc){this.mc=mc;}
+
+	public int getProprietaire(){return proprietaire;}
+	public void setProprietaire(Proprietaire proprietaire){this.proprietaire=proprietaire;}
+
+}
