@@ -17,6 +17,14 @@ public class Taux {
 
 	public Categorie getCategorie(){return categorie;}
 	public void setCategorie(Categorie categorie){this.categorie=categorie;}
+	public double getMontant() {
+		return montant;
+	}
+	public void setMontant(double montant) {
+		this.montant = montant;
+	}
+	
+	
 	
 	
 	

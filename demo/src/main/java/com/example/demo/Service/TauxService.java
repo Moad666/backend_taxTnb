@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Dao.TauxRepository;
 import com.example.demo.entities.Taux;
+import com.example.demo.entities.Terrain;
 
 @Service
 public class TauxService {
@@ -28,6 +30,21 @@ public class TauxService {
 
 	public void deleteById(Integer id) {
 		tauxRepository.deleteById(id);
+	}
+	
+	public ResponseEntity<Taux> updateTaux(int id, Taux taux) {
+	    Optional<Taux> optionalTaux = tauxRepository.findById(id);
+
+	    if (optionalTaux.isPresent()) {
+	        Taux existingTaux = optionalTaux.get();
+	        existingTaux.setMontant(taux.getMontant());
+	        existingTaux.setCategorie(taux.getCategorie());
+
+	        Taux updatedTaux = tauxRepository.save(existingTaux);
+	        return ResponseEntity.ok(updatedTaux);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
 	}
 	
 	
