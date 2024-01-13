@@ -71,6 +71,10 @@ public class TerrainController {
 	public ResponseEntity<Terrain> update(@PathVariable int id, @RequestBody Terrain terrain){
 		return terrainService.updateTerrain(id, terrain);
 	}
-	
-	
+    
+    @GetMapping("/findByProprietaireCIN/{CIN}")
+    public ResponseEntity<List<Terrain>> findTerrainByProprietaireCIN(@PathVariable String CIN) {
+        List<Terrain> terrainList = terrainService.findTerrainByProprietaireCIN(CIN);
+        return ResponseEntity.ok(terrainList);
+    }
 }

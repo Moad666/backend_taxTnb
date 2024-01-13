@@ -56,6 +56,11 @@ public class TerrainService {
 	        return ResponseEntity.notFound().build();
 	    }
 	}
+
+	
+	public List<Terrain> findTerrainByProprietaireCIN(String CIN) {
+        return terrainRepository.findByProprietaireCIN(CIN);
+    }
 	
 	
 }

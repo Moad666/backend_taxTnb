@@ -18,4 +18,6 @@ public interface TerrainRepository extends JpaRepository<Terrain,Integer>{
 	@Query("select c.type from Terrain t inner join Categorie c on t.categorie.id=c.id where t.id= :terrainId")
 	List<Object[]> getTypeByTerrainId(@Param("terrainId") int terrainId);
 	
+	List<Terrain> findByProprietaireCIN(String CIN);
+	
 }
