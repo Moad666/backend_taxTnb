@@ -52,5 +52,11 @@ public class TauxController {
 		return tauxService.updateTaux(id, taux);
 	}
 	
+	@GetMapping("/findByCategorieType/{type}")
+    public ResponseEntity<List<Taux>> findTerrainByProprietaireCIN(@PathVariable String type) {
+        List<Taux> tauxList = tauxService.findTauxByCategorieType(type);
+        return ResponseEntity.ok(tauxList);
+    }
+	
 	
 }

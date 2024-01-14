@@ -47,5 +47,9 @@ public class TauxService {
 	    }
 	}
 	
+	public List<Taux> findTauxByCategorieType(String type) {
+        return tauxRepository.findByCategorieType(type);
+    }
+	
 	
 }

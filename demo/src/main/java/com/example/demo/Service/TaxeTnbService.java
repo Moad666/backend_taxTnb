@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Dao.TaxeTnbRepository;
 import com.example.demo.entities.TaxeTnb;
+import com.example.demo.entities.Terrain;
 
 @Service
 public class TaxeTnbService {
@@ -30,5 +31,8 @@ public class TaxeTnbService {
 		taxetnbRepository.deleteById(id);
 	}
 	
+	public List<TaxeTnb> findTaxeTnbByProprietaireCIN(String CIN) {
+        return taxetnbRepository.findByProprietaireCIN(CIN);
+    }
 	
 }
