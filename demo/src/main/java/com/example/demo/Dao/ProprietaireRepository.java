@@ -10,4 +10,5 @@ public interface ProprietaireRepository extends JpaRepository<Proprietaire,Integ
 	
 	public Proprietaire findByCIN(String CIN);
 	Boolean existsByCIN(String CIN);
+	Proprietaire findByUsername(String username);
 }

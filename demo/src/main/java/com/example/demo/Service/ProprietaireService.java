@@ -53,6 +53,17 @@ public class ProprietaireService {
 	    }
 	}
 	
+	public boolean authenticate(String username, String password) {
+        Proprietaire proprietaire = proprietaireRepository.findByUsername(username);
+        if (proprietaire != null && proprietaire.getPassword().equals(password)) {
+            return true;
+        }
+
+        return false;
+    }
+	
+	
+	
 	
 	
 }

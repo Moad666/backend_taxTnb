@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,17 +20,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.example.demo.Dao.ProprietaireRepository;
 import com.example.demo.Service.ProprietaireService;
+import com.example.demo.entities.LoginRequest;
 import com.example.demo.entities.Proprietaire;
 
-@CrossOrigin(origins = "http://localhost:4200/")	
+@CrossOrigin(origins = {"http://localhost:4200/", "http://localhost:8081/"})	
 @RestController
 @RequestMapping("/proprietaire")
 public class ProprietaireController {
 	
 	@Autowired
 	ProprietaireService proprietaireService;
+	
+	@Autowired
+	private ProprietaireRepository proprietaireRepository;
 	
 
 	
@@ -62,5 +67,24 @@ public class ProprietaireController {
 	public ResponseEntity<Proprietaire> update(@PathVariable int id, @RequestBody Proprietaire proprietaire){
 		return proprietaireService.updateProprietaire(id, proprietaire);
 	}
+	
+	/*@PostMapping("/login")
+    public boolean login(@RequestBody Proprietaire credentials) {
+        Proprietaire existingProprietaire = proprietaireRepository.findByUsername(credentials.getUsername());
+        return existingProprietaire != null && existingProprietaire.getPassword().equals(credentials.getPassword());
+    }*/
+	 @PostMapping("/login")
+	    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+	        String username = loginRequest.getUsername();
+	        String password = loginRequest.getPassword();
+
+	        boolean isAuthenticated = proprietaireService.authenticate(username, password);
+
+	        if (isAuthenticated) {
+	            return new ResponseEntity<>("Request triggered successfully!", HttpStatus.OK);
+	        } else {
+	            return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+	        }
+	    }
 	
 }

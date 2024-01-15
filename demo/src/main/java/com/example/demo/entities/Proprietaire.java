@@ -18,7 +18,7 @@ public class Proprietaire {
 	private String nom;
 	private String prenom;
 	private String CIN;
-	
+	private String username;
 	private String password;
 
 	@ManyToMany(fetch = FetchType.LAZY) 
@@ -52,4 +52,10 @@ public class Proprietaire {
 
 	public String getCIN(){return CIN;}
 	public void setCIN(String CIN){this.CIN=CIN;}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }
